@@ -18,18 +18,20 @@ workflows:
           source: true
 
     scripts:
-      - name: "Install dependencies"
-        script: |
-          flutter pub get
-      - name: "Run tests"
-        script: |
-          flutter test
-      - name: "Build iOS release"
-        script: |
-          flutter build ios --release --no-codesign
-      - name: "Post-processing"
-        script: |
-          # Additional scripts like code signing or other post-build steps can be added here
+    - name: "Install dependencies"
+      script: |
+        flutter pub get
+    - name: "Install CocoaPods"
+      script: |
+        cd ios
+        pod install
+        cd ..
+    - name: "Run tests"
+      script: |
+        flutter test
+    - name: "Build iOS release"
+      script: |
+        flutter build ios --release --no-codesign
 
     artifacts:
       - build/ios/ipa/*.ipa # This will collect the .ipa file from the specified path
