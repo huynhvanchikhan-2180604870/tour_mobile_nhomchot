@@ -6,7 +6,7 @@ workflows:
       vars:
         XCODE_WORKSPACE: "Runner.xcworkspace" # Update with your actual workspace name
         XCODE_SCHEME: "Runner" # Update with your actual scheme name
-      xcode: "12.4.0" # Specify the Xcode version
+      xcode: latest # Specify the Xcode version
       cocoapods: "default" # Use the default cocoapods version
 
     triggering:
