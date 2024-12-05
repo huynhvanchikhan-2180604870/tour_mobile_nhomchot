@@ -6,10 +6,8 @@ workflows:
       vars:
         XCODE_WORKSPACE: "Runner.xcworkspace" # Update with your actual workspace name
         XCODE_SCHEME: "Runner" # Update with your actual scheme name
-        # Add other environment variables if necessary
-      xcode: latest # Specify the Xcode version
+      xcode: "12.4.0" # Specify the Xcode version
       cocoapods: "default" # Use the default cocoapods version
-      instance_type: mac_mini_m2 # Specify the instance type
 
     triggering:
       events:
@@ -39,7 +37,4 @@ workflows:
     publishing:
       email:
         recipients:
-          - email@example.com # Specify your email here
-        notify_on_build_start: true
-        notify_on_build_success: true
-        notify_on_build_failure: true
+          - huynhkhan91@gmail.com # Specify your email here
